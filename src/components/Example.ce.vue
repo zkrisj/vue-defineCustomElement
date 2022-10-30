@@ -2,7 +2,8 @@
   <h1>Example.ce</h1>
 </template>
 
-<script>
+<script setup>
+  defineProps({ '*': '' });
 </script>
 
 <style>

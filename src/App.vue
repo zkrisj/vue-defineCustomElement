@@ -5,11 +5,11 @@ import { ref } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 import myDefineComponent from './components/defineComponent.vue'
 const posts = ref([
-  { id: 1, title: 'My journey with Vue' },
-  { id: 2, title: 'Blogging with Vue' },
-  { id: 3, title: 'Why Vue is so fun' }
+  { id: 1, title: 'My journey with Vue', postFontSize: 1 },
+  { id: 2, title: 'Blogging with Vue', postFontSize: 1 },
+  { id: 3, title: 'Why Vue is so fun', postFontSize: 1 }
 ])
-const postFontSize = ref(1)
+// const postFontSize = ref(1)
 </script>
 
 <template>
@@ -21,13 +21,11 @@ const postFontSize = ref(1)
   </div>
   <my-example></my-example>
   <myDefineComponent/>
-  <div :style="{ fontSize: postFontSize + 'em' }">
-    <BlogPost v-for="post in posts" :key="post.id" :title="post.title" @enlarge-text="postFontSize += 0.1"></BlogPost>
-  </div>
+  <BlogPost :style="{ fontSize: post.postFontSize + 'em' }" v-for="post in posts" :key="post.id" :title="post.title" @enlarge-text="post.postFontSize += 0.1"></BlogPost>
   <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style>
+<style scoped>
 .logo {
   height: 6em;
   padding: 1.5em;
