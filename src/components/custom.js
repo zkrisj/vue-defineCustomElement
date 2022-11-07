@@ -8,7 +8,7 @@ const MyVueElement = defineCustomElement({
   // defineCustomElement 特有的：注入进 ShadowRoot 的 CSS
   styles: [`::slotted(div){color:lime}`]
 })
-console.log(Example.styles) // ["/* 内联 css */"]
+// console.log(Example.styles) // ["/* 内联 css */"]
 const ExampleElement = defineCustomElement(Example) // 转换为自定义元素构造器
 export { MyVueElement, ExampleElement }
 export function register() {

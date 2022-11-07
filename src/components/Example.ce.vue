@@ -4,13 +4,14 @@
   <BlogPost2 />
   <BlogPost :style="{ fontSize: post.postFontSize + 'em' }" v-for="post in posts" :key="post.id" :title="post.title"
     @enlarge-text="post.postFontSize += 0.1" />
-  <HelloWorld msg="Vite" />
+  <HelloWorld v-model:msg="m" />
+  <input v-model="m">
 </template>
 <script setup>
   defineProps({ '*': '' })
   import { ref } from 'vue'
   import HelloWorld from './HelloWorld.vue'
-  const postFontSize = ref(1)
+  const postFontSize = ref(1), m = ref('HI');
   const posts = ref([
     { id: 1, title: 'My journey with Vue', postFontSize: 1 },
     { id: 2, title: 'Blogging with Vue', postFontSize: 1 },
