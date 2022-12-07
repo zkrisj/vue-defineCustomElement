@@ -1,11 +1,11 @@
 <template>
   <h1>Example.ce</h1>
-  <BlogPost title="1212" :style="{ fontSize: postFontSize + 'em' }" @enlarge-text="postFontSize += 0.1" />
-  <BlogPost2 />
-  <BlogPost :style="{ fontSize: post.postFontSize + 'em' }" v-for="post in posts" :key="post.id" :title="post.title"
-    @enlarge-text="post.postFontSize += 0.1" />
   <HelloWorld v-model:msg="m" />
   <input v-model="m">
+  <BlogPost title="1212" :style="{ fontSize: postFontSize + 'em' }" @enlarge-text="postFontSize += 0.1" />
+  <!-- <BlogPost2 /> -->
+  <BlogPost :style="{ fontSize: post.postFontSize + 'em' }" v-for="post in posts" :key="post.id" :title="post.title"
+    @enlarge-text="post.postFontSize += 0.1" />
 </template>
 <script setup>
   defineProps({ '*': '' })
