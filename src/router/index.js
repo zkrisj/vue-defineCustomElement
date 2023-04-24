@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
 import Jsx from '../components/Jsx.vue'
+import Jsx2 from '../components/Jsx2.vue'
+import Jsx3 from '../components/Jsx3.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +16,16 @@ const router = createRouter({
       path: '/jsx',
       name: 'jsx',
       component: Jsx
+    },
+    {
+      path: '/jsx2',
+      name: 'jsx2',
+      component: Jsx2
+    },
+    {
+      path: '/jsx3',
+      name: 'jsx3',
+      component: Jsx3
     },
     {
       path: '/components',
